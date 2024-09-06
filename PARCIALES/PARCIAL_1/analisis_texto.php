@@ -12,7 +12,7 @@ foreach ($frases as $frase){
   //echo contar_vocales($frase);
   
   //Funcion invertir Palabras
-  //echo invertir_palabras($frase);
+  echo invertir_palabras($frase);
   
 }
 
