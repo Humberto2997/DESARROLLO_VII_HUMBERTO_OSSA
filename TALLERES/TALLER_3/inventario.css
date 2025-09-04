@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 20px;
+}
+
+/* Títulos */
+h2 {
+  color: #2c3e50;
+}
+
+/* Tablas */
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados de tabla */
+th {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Celdas de tabla */
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Resaltar filas con stock bajo */
+.stock-bajo {
+  background-color: #f8d7da;
+  /* rojo claro */
+  color: #721c24;
+}
+
+/* Valor total */
+p strong {
+  color: #2c3e50;
+  font-size: 1.1em;
+}
