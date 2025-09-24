@@ -1,38 +1,38 @@
 <?php
 
 class Empleado{
-  public $Nombre;
-  public $IDEmpleado;
-  public $SalarioBase;
+  public $nombre;
+  public $idempleado;
+  public $salarioBase;
 
-  public function __construct($Nombre, $IDEmpleado, $SalarioBase){
-    $this->setNombre($Nombre);
-    $this->setIdEmpleado($IDEmpleado);
-    $this->setSalarioBase($SalarioBase);
+  public function __construct($nombre, $idempleado, $salarioBase){
+    $this->setNombre($nombre);
+    $this->setIdEmpleado($idempleado);
+    $this->setSalarioBase($salarioBase);
   }
 
   public function getNombre(){
     return $this->nombre;
   }
 
-  public function setNombre($Nombre){
-    $this->nombre = trim($Nombre);
+  public function setNombre($nombre){
+    $this->nombre = trim($nombre);
   }
     
   public function getIdEmpleado(){
     return $this->idempleado;
   }
 
-  public function setIdEmpleado($IDEmpleado){
-    $this->idempleado = trim($IDEmpleado);
+  public function setIdEmpleado($idempleado){
+    $this->idempleado = trim($idempleado);
   }
 
   public function getSalarioBase(){
     return $this->salariobase;
   }
   
-  public function setSalarioBase($SalarioBase){
-    $this->salariobase = trim($SalarioBase);
+  public function setSalarioBase($salarioBase){
+    $this->salariobase = trim($salarioBase);
   }
 
   public function InfoEmpleado(){
