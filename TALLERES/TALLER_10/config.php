@@ -1,8 +1,29 @@
 <?php
-define('GITHUB_TOKEN', 'tu_token_aqui');
-define('GITHUB_API_URL', 'https://api.github.com');
-define('USER_AGENT', 'PHP GitHub API Client');
+// Cargar variables de entorno desde .env
+function loadEnv($path) {
+    if (!file_exists($path)) {
+        die(".env file not found!");
+    }
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue; // ignorar comentarios
+        list($name, $value) = explode('=', trim($line), 2);
+        putenv("$name=$value");
+        $_ENV[$name] = $value;
+    }
+}
 
+loadEnv(__DIR__ . '/.env');
+
+// Definir constantes desde .env
+define('GITHUB_TOKEN', $_ENV['GITHUB_TOKEN'] ?? '');
+define('GITHUB_API_URL', $_ENV['GITHUB_API_URL'] ?? 'https://api.github.com');
+define('USER_AGENT', $_ENV['USER_AGENT'] ?? 'PHP GitHub API Client');
+
+// Validar que el token exista
+if (empty(GITHUB_TOKEN)) {
+    die("Error: GITHUB_TOKEN no está configurado en .env");
+}
 class GitHubClient {
     private $token;
     private $baseUrl;
